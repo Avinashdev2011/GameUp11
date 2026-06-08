@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Harshawardhan">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameUp11 - Book · Play · LevelUp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" as="image"
+    href="https://images.unsplash.com/photo-1714213450890-3f465d40ed46?auto=format&fit=crop&w=1920&q=80">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="icon" type="image/svg+xml" href="logos/LOGO.svg">
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader-content">
+      <div class="sport-loader-container">
+        <div class="sport-ball-wrapper">
+          <svg class="sport-ball soccer" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="44" />
+            <polygon points="50,25 35,40 40,60 60,60 65,40" />
+            <polyline points="50,25 50,6" />
+            <polyline points="35,40 10,35" />
+            <polyline points="65,40 90,35" />
+            <polyline points="40,60 25,85" />
+            <polyline points="60,60 75,85" />
+          </svg>
+          <svg class="sport-ball basketball" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="44" />
+            <line x1="50" y1="6" x2="50" y2="94" />
+            <line x1="6" y1="50" x2="94" y2="50" />
+            <path d="M 20,20 Q 40,50 20,80" />
+            <path d="M 80,20 Q 60,50 80,80" />
+          </svg>
+          <svg class="sport-ball tennis" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="44" />
+            <path d="M 30,10 Q 70,50 30,90" />
+            <path d="M 70,10 Q 30,50 70,90" />
+          </svg>
+          <svg class="sport-ball volleyball" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="44" />
+            <path d="M 10,30 Q 50,50 90,30" />
+            <path d="M 10,70 Q 50,50 90,70" />
+            <path d="M 30,10 Q 50,50 30,90" />
+          </svg>
+        </div>
+        <div class="sport-shadow"></div>
+      </div>
+      <div class="loader-text">Game<span style="color: #1aa445;">Up</span>11</div>
+    </div>
+  </div>
+  <div id="root">
+    <div class="app-container">
+      <nav class="liquid-navbar" data-testid="main-navbar">
+        <div class="navbar-content">
+          <div class="logo-brand-container" style="display: flex; align-items: center; gap: 12px; cursor: pointer;">
+            <img src="logos/LOGO.svg" class="logo-img" alt="GameUp11 Logo"
+              style="height: 40px; width: auto; filter: drop-shadow(0 2px 4px rgba(5,54,21,0.1));">
+            <div class="brand-text" style="display: flex; flex-direction: column; justify-content: center;">
+              <span class="brand-title"
+                style="color: #053615; font-size: 1.4rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1; font-family: 'Inter', sans-serif;">Game<span
+                  style="color: #1aa445;">Up</span>11</span>
+              <span class="brand-subtitle"
+                style="color: #0a5025; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-top: 4px; line-height: 1;">Book
+                · Play · LevelUp</span>
+            </div>
+          </div>
+          <div class="nav-links" data-testid="nav-links">
+            <a href="#turfs" data-testid="nav-community">Community</a>
+            <a href="#footer" data-testid="nav-support">Support</a>
+            <button class="btn-accent" data-testid="nav-getapp-btn">Get App ↓</button>
+          </div>
+        </div>
+      </nav>
+
+      <section class="hero-section" id="overview" data-testid="hero-section">
+        <div class="hero-bg"
+          style="background-image: url('https://images.unsplash.com/photo-1714213450890-3f465d40ed46?auto=format&fit=crop&w=1920&q=80');">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content" data-testid="hero-content">
+          <div class="hero-glass-card">
+            <h1 class="hero-headline" data-testid="hero-headline">Join the Elite Arena Network</h1>
+            <p class="hero-subheading" data-testid="hero-subheading">Connect your facility · Eliminate empty slots ·
+              Book, Play, Level Up</p>
+            <div class="hero-buttons" data-testid="hero-buttons">
+              <a href="#contact" class="btn-primary shine-btn"
+                data-testid="list-turf-btn"><span>Apply Now</span></a>
+              <a href="#turfs" class="btn-secondary-hero" data-testid="explore-turfs-btn">Explore Venue →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="carousel-section-new" id="community" data-testid="carousel-section">
+        <div class="carousel-bg-elements">
+  <i class="bg-icon tennis-bg-icon fa-solid fa-table-tennis-paddle-ball"></i>
+  <i class="bg-icon cricket-bg-icon fa-solid fa-baseball-bat-ball"></i>
+  <i class="bg-icon soccer-bg-icon fa-solid fa-futbol"></i>
+  <i class="bg-icon basketball-bg-icon fa-solid fa-basketball"></i>
+  <i class="bg-icon shuttlecock-bg-icon fa-solid fa-medal"></i>
+  <i class="bg-icon pingpong-bg-icon fa-solid fa-table-tennis-paddle-ball"></i>
+  <i class="bg-icon volleyball-bg-icon fa-solid fa-volleyball"></i>
+  <i class="bg-icon baseball-bg-icon fa-solid fa-baseball"></i>
+  <i class="bg-icon scuba-bg-icon fa-solid fa-person-swimming"></i>
+  <i class="bg-icon amfootball-bg-icon fa-solid fa-football"></i>
+  <i class="bg-icon bowling-bg-icon fa-solid fa-bowling-ball"></i>
+  <i class="bg-icon golf-bg-icon fa-solid fa-golf-ball-tee"></i>
+  <i class="bg-icon hockey-bg-icon fa-solid fa-hockey-puck"></i>
+  <i class="bg-icon archery-bg-icon fa-solid fa-bullseye"></i>
+  <i class="bg-icon boxing-bg-icon fa-solid fa-dumbbell"></i>
+  <i class="bg-icon racing-bg-icon fa-solid fa-flag-checkered"></i>
+  <i class="bg-icon snowboarding-bg-icon fa-solid fa-person-snowboarding"></i>
+  <i class="bg-icon skating-bg-icon fa-solid fa-person-skating"></i>
+  <i class="bg-icon trophy-bg-icon fa-solid fa-trophy"></i>
+  <i class="bg-icon stopwatch-bg-icon fa-solid fa-stopwatch"></i>
+  <i class="bg-icon skiing-bg-icon fa-solid fa-person-skiing"></i>
+  <i class="bg-icon biking-bg-icon fa-solid fa-person-biking"></i>
+  <i class="bg-icon sport1-bg-icon fa-solid fa-basketball"></i>
+  <i class="bg-icon sport2-bg-icon fa-solid fa-futbol"></i>
+  <i class="bg-icon sport3-bg-icon fa-solid fa-football"></i>
+  <i class="bg-icon sport4-bg-icon fa-solid fa-baseball"></i>
+  <i class="bg-icon sport5-bg-icon fa-solid fa-volleyball"></i>
+  <i class="bg-icon sport6-bg-icon fa-solid fa-hockey-puck"></i>
+  <i class="bg-icon sport7-bg-icon fa-solid fa-golf-ball-tee"></i>
+  <i class="bg-icon sport8-bg-icon fa-solid fa-bowling-ball"></i>
+  <i class="bg-icon sport9-bg-icon fa-solid fa-table-tennis-paddle-ball"></i>
+  <i class="bg-icon sport10-bg-icon fa-solid fa-baseball-bat-ball"></i>
+  <i class="bg-icon sport11-bg-icon fa-solid fa-bullseye"></i>
+  <i class="bg-icon sport12-bg-icon fa-solid fa-dumbbell"></i>
+  <i class="bg-icon sport13-bg-icon fa-solid fa-person-running"></i>
+  <i class="bg-icon sport14-bg-icon fa-solid fa-shoe-prints"></i>
+  <i class="bg-icon sport15-bg-icon fa-solid fa-weight-hanging"></i>
+</div>
+        <div class="section-container">
+          <div class="carousel-header-new">
+            <h2 class="carousel-title" data-testid="carousel-title">Sports Carousel</h2>
+            <p class="carousel-subtitle" data-testid="carousel-subtitle">Book your game. Level up your play.</p>
+          </div>
+          <div class="sports-carousel-new" data-testid="sports-carousel">
+            <div class="carousel-side-panel left" data-testid="carousel-side-left">
+              <button class="carousel-arrow" aria-label="Previous">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+              </button>
+            </div>
+            <div class="carousel-track">
+              <div class="sport-card-new active" data-testid="sport-card-cricket"
+                style="opacity: 1; transform: scale(1); transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1); background-image: url('images/Cricket.jpeg'); background-size: cover; background-position: center; border-radius: 24px;">
+                <div class="sport-card-gradient"
+                  style="background: linear-gradient(rgba(255, 230, 210, 0.6) 0%, rgba(255, 200, 160, 0.7) 100%);">
+                  <h3 class="sport-name-new" data-testid="sport-name-cricket">Cricket</h3>
+                  <p class="sport-subtitle-new" data-testid="sport-subtitle-cricket">TURF</p>
+                </div>
+              </div>
+              <div class="sport-card-new" data-testid="sport-card-tennis"
+                style="opacity: 0; transform: scale(0.95); transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1); background-image: url('images/Tennis.jpeg'); background-size: cover; background-position: center; border-radius: 24px;">
+                <div class="sport-card-gradient"
+                  style="background: linear-gradient(rgba(200, 255, 220, 0.6) 0%, rgba(150, 240, 180, 0.7) 100%);">
+                  <h3 class="sport-name-new" data-testid="sport-name-tennis">Tennis</h3>
+                  <p class="sport-subtitle-new" data-testid="sport-subtitle-tennis">COURT</p>
+                </div>
+              </div>
+              <div class="sport-card-new" data-testid="sport-card-pickleball"
+                style="opacity: 0; transform: scale(0.95); transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1); background-image: url('images/Pickleball.jpeg'); background-size: cover; background-position: center; border-radius: 24px;">
+                <div class="sport-card-gradient"
+                  style="background: linear-gradient(rgba(255, 240, 200, 0.6) 0%, rgba(255, 215, 150, 0.7) 100%);">
+                  <h3 class="sport-name-new" data-testid="sport-name-pickleball">Pickleball</h3>
+                  <p class="sport-subtitle-new" data-testid="sport-subtitle-pickleball">COURT</p>
+                </div>
+              </div>
+              <div class="sport-card-new" data-testid="sport-card-badminton"
+                style="opacity: 0; transform: scale(0.95); transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1); background-image: url('images/Badminton.jpeg'); background-size: cover; background-position: center; border-radius: 24px;">
+                <div class="sport-card-gradient"
+                  style="background: linear-gradient(rgba(255, 220, 240, 0.6) 0%, rgba(240, 200, 230, 0.7) 100%);">
+                  <h3 class="sport-name-new" data-testid="sport-name-badminton">Badminton</h3>
+                  <p class="sport-subtitle-new" data-testid="sport-subtitle-badminton">COURT</p>
+                </div>
+              </div>
+              <div class="sport-card-new" data-testid="sport-card-game club"
+                style="opacity: 0; transform: scale(0.95); transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1); border-radius: 24px;">
+                <div class="sport-card-gradient"
+                  style="background: linear-gradient(rgba(255, 240, 240, 0.9) 0%, rgba(255, 210, 210, 0.8) 100%);">
+                  <h3 class="sport-name-new" data-testid="sport-name-game club">Game Club</h3>
+                  <p class="sport-subtitle-new" data-testid="sport-subtitle-game club">+ MORE</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-side-panel right" data-testid="carousel-side-right">
+              <button class="carousel-arrow" aria-label="Next">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="carousel-dots-new" data-testid="carousel-dots">
+            <button class="dot-new active" data-testid="carousel-dot-0"></button>
+            <button class="dot-new" data-testid="carousel-dot-1"></button>
+            <button class="dot-new" data-testid="carousel-dot-2"></button>
+            <button class="dot-new" data-testid="carousel-dot-3"></button>
+            <button class="dot-new" data-testid="carousel-dot-4"></button>
+          </div>
+          <div class="carousel-cta-new" data-testid="carousel-cta">
+            <button class="btn-book-now" data-testid="book-now-btn"><span>Book Now</span></button>
+          </div>
+          <p class="find-turfs-text-new" data-testid="find-turfs-text">📍 Find turfs near you →</p>
+        </div>
+      </section>
+      <section class="turfs-section" id="turfs" data-testid="turfs-section">
+        <div class="section-container">
+          <div class="carousel-header-new">
+            <h2 class="carousel-title" data-testid="turfs-title">Our exclusive Partners</h2>
+            <p class="carousel-subtitle" data-testid="turfs-subtitle">Collaborating to bring you the best gaming
+              experience.</p>
+          </div>
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <!-- Turf 1 -->
+              <div class="swiper-slide">
+                <div class="turf-card">
+                  <div class="turf-card-content">
+                    <h3 class="turf-name">SPC Turf</h3>
+                    <p class="turf-location">📍 485/3A, Plot NO.19, Kolhapur Rd, opp. Akashwani, behind Volkswagen
+                      Showroom, Sangli, Dattanagar, Sangli Miraj Kupwad, Maharashtra 416416</p>
+                    <div class="turf-contact">
+                      <p>Email: spcsangli@gmail.com</p>
+                      <p>Phone: 9767777622 / 8400895008</p>
+                    </div>
+                    <div class="turf-supervisor">
+                      <h4>Supervisor: Atul</h4>
+                      <p>kukrejakrish2005@gmail.com | 7620092286</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Turf 2 -->
+              <div class="swiper-slide">
+                <div class="turf-card">
+                  <div class="turf-card-content">
+                    <h3 class="turf-name">The W turf zone</h3>
+                    <p class="turf-location">📍 In front of bharti hospital, sangli Miraj road, Sangli</p>
+                    <div class="turf-pricing">
+                      <p>Day time: ₹800 / Hour</p>
+                      <p>Night time: ₹1000 / Hour</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Turf 3 -->
+              <div class="swiper-slide">
+                <div class="turf-card">
+                  <div class="turf-card-content">
+                    <h3 class="turf-name">The Royal Louis Cabana Snooker Club</h3>
+                    <p class="turf-location">📍 Spurti Chouk, hasne ashram Road, Hari Om Plaza, Sangli</p>
+                    <p class="turf-games">Games: Snooker / Pool</p>
+                    <div class="turf-contact">
+                      <p>Phone: 8080665180 / 8208326443</p>
+                    </div>
+                    <div class="turf-pricing">
+                      <p>Price: ₹250 / ₹200 per hr</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+      </section>
+      <section class="stats-section" data-testid="stats-section">
+        <div class="section-container">
+          <div class="stats-grid">
+            <div class="stat-card" data-testid="stat-turfs">
+              <div class="stat-number" data-target="500" data-suffix="+">0+</div>
+              <div class="stat-label">Partner Turfs</div>
+            </div>
+            <div class="stat-card" data-testid="stat-players">
+              <div class="stat-number" data-target="50" data-suffix="k+">0k+</div>
+              <div class="stat-label">Active Players</div>
+            </div>
+            <div class="stat-card" data-testid="stat-bookings">
+              <div class="stat-number" data-target="1.0" data-suffix="M+">0M+</div>
+              <div class="stat-label">Total Bookings</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="partner-section" id="partner" data-testid="partner-section">
+        <div class="leaf-shadow leaf-shadow-1"></div>
+        <div class="leaf-shadow leaf-shadow-2"></div>
+        <div class="leaf-shadow leaf-shadow-3"></div>
+        <div class="section-container">
+          <div class="partner-content">
+            <h2 class="partner-headline-enhanced" data-testid="partner-headline">Partner with Game<span
+                style="color: #1aa445;">Up</span>11</h2>
+            <div class="partner-features" data-testid="partner-features">
+              <p class="partner-feature-item">• Digitize your bookings</p>
+              <p class="partner-feature-item">• Eliminate empty slots</p>
+              <p class="partner-feature-item">• Connect with thousands of active players</p>
+            </div>
+            <button onclick="window.location.href='#contact'" class="btn-primary shine-btn partner-btn" data-testid="join-partner-btn"
+              style="border: 1px solid rgba(255, 255, 255, 0.4);"><span>Join Us</span></button>
+          </div>
+        </div>
+      </section>
+      <section class="solid-contact-section" id="contact">
+        <div class="solid-contact-container">
+          <div class="solid-contact-left">
+            <i class="fa-regular fa-envelope contact-envelope-icon"></i>
+            <h2 class="solid-contact-headline">Get in touch for<br>inquiries or<br>support:</h2>
+            <a href="mailto:Support@gameup11.com" class="solid-contact-email">Support@gameup11.com</a>
+            <div class="solid-contact-phones" style="margin-top: 15px; margin-bottom: 15px;">
+              <p class="solid-contact-phone" style="font-size: 1.2rem; font-weight: 500; margin-bottom: 5px;">+91 9156860802</p>
+              <p class="solid-contact-phone" style="font-size: 1.2rem; font-weight: 500;">+91 8830219738</p>
+            </div>
+            <p class="solid-contact-subtext">or Send a message via this form</p>
+          </div>
+          <div class="solid-contact-right">
+            <h3 class="solid-contact-form-title">Contact</h3>
+            <form class="solid-contact-form" onsubmit="submitSolidForm(event)">
+              <div class="form-row">
+                <div class="form-group-solid">
+                  <label for="venueName">Venue Name *</label>
+                  <input type="text" id="venueName" name="venueName" required>
+                </div>
+                <div class="form-group-solid">
+                  <label for="contactName">Your Name *</label>
+                  <input type="text" id="contactName" name="contactName" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group-solid">
+                  <label for="contactNumber">Contact Number *</label>
+                  <input type="tel" id="contactNumber" name="contactNumber" required>
+                </div>
+                <div class="form-group-solid">
+                  <label for="contactEmail">Contact Email *</label>
+                  <input type="email" id="contactEmail" name="contactEmail" required>
+                </div>
+              </div>
+              <div class="form-group-solid">
+                <label for="venueLocation">Venue City & Location *</label>
+                <input type="text" id="venueLocation" name="venueLocation" required>
+              </div>
+              <div class="form-group-solid checkbox-group-solid">
+                <label>Sports Available At Venue *</label>
+                <div class="checkbox-options-solid">
+                  <label class="custom-checkbox-solid"><input type="checkbox" name="sports" value="Football"><span>Football</span></label>
+                  <label class="custom-checkbox-solid"><input type="checkbox" name="sports" value="Cricket"><span>Cricket</span></label>
+                  <label class="custom-checkbox-solid"><input type="checkbox" name="sports" value="Badminton"><span>Badminton</span></label>
+                  <label class="custom-checkbox-solid"><input type="checkbox" name="sports" value="Tennis"><span>Tennis</span></label>
+                </div>
+              </div>
+              <div class="form-group-solid">
+                <label for="otherInfo">Any other information you want to share</label>
+                <textarea id="otherInfo" name="otherInfo" rows="2" required></textarea>
+              </div>
+              <button type="submit" class="solid-submit-btn">Submit</button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <footer class="glass-footer" id="footer" data-testid="footer">
+        <div class="footer-glow"></div>
+        <div class="section-container">
+          <div class="footer-grid">
+            <div class="footer-column" data-testid="footer-support">
+              <h4 class="footer-heading">Support</h4>
+              <ul class="footer-links">
+                <li><a href="#support" data-testid="footer-help">Help Centre</a></li>
+                <li><a href="#support" data-testid="footer-contact">Contact Us</a></li>
+                <li><a href="#support" data-testid="footer-faqs">FAQs</a></li>
+              </ul>
+            </div>
+            <div class="footer-column" data-testid="footer-careers">
+              <h4 class="footer-heading">Careers</h4>
+              <ul class="footer-links">
+                <li><a href="#contact" data-testid="footer-apply">Apply Now</a></li>
+              </ul>
+            </div>
+            <div class="footer-column" data-testid="footer-social">
+              <h4 class="footer-heading">Follow Us</h4>
+              <ul class="footer-links">
+                <li><a href="#instagram" data-testid="footer-instagram">Instagram</a></li>
+              </ul>
+            </div>
+            <div class="footer-column" data-testid="footer-app">
+              <h4 class="footer-heading">Get the App</h4>
+              <ul class="footer-links">
+                <li><a href="#appstore" data-testid="footer-appstore">App Store</a></li>
+                <li><a href="#playstore" data-testid="footer-playstore">Google Play</a></li>
+                <li><a href="#qr" data-testid="footer-qr">Scan QR Code</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-copyright" data-testid="footer-copyright">&copy; 2026 Game<span
+              style="color: #1aa445;">Up</span>11 &middot; Book &middot; Play &middot; LevelUp</div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/script.js"></script>
+
+  <!-- Site Load Popup -->
+  <div id="siteLoadPopup" class="modal-overlay">
+    <div class="modal-card pixel-form" style="text-align: center; max-width: 400px; padding: 2rem;">
+      <button class="modal-close" onclick="closeSiteLoadPopup()">&times;</button>
+      <h2 class="modal-title" style="margin-bottom: 1rem; font-size: 1.5rem;">Coming Soon</h2>
+      <p class="modal-subtitle" style="font-size: 1.1rem; color: rgba(252, 252, 235, 0.8);">We are available at Google
+        Play and Apple Store.</p>
+    </div>
+  </div>
+
+  <script>
+
+
+    function closeSiteLoadPopup() {
+      const popup = document.getElementById('siteLoadPopup');
+      popup.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    
+    
+
+    function submitSolidForm(event) {
+      event.preventDefault();
+
+      const venueName = document.getElementById('venueName').value;
+      const contactName = document.getElementById('contactName').value;
+      const contactNumber = document.getElementById('contactNumber').value;
+      const contactEmail = document.getElementById('contactEmail').value;
+      const venueLocation = document.getElementById('venueLocation').value;
+
+      const sportsCheckboxes = document.querySelectorAll('input[name="sports"]:checked');
+      const sports = Array.from(sportsCheckboxes).map(cb => cb.value).join(', ');
+
+      const otherInfo = document.getElementById('otherInfo').value;
+
+      const whatsappMessage = encodeURIComponent(
+        `New Venue Application Details:
+
+` +
+        `Contact Person: ${contactName}
+` +
+        `Contact Number: ${contactNumber}
+` +
+        `Contact Email: ${contactEmail}
+` +
+        `Venue Name: ${venueName}
+` +
+        `Venue Location: ${venueLocation}
+` +
+        `Sports Available: ${sports || 'None selected'}
+
+` +
+        `Additional Information:
+${otherInfo}`
+      );
+
+      window.open(`https://wa.me/919156860802?text=${whatsappMessage}`, '_blank');
+      event.target.reset();
+    }
+
+
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.body.classList.add('loaded');
+        setTimeout(() => {
+          const preloader = document.getElementById('preloader');
+          if (preloader) preloader.style.display = 'none';
+
+          const popup = document.getElementById('siteLoadPopup');
+          if (popup) {
+            popup.classList.add('active');
+            document.body.style.overflow = 'hidden';
+          }
+        }, 600);
+      }, 4000); // Wait for the full 4s animation cycle
+    });
+  </script>
+</body>
+
+</html>
