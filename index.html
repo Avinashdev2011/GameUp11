@@ -310,7 +310,7 @@
               <p class="partner-feature-item">• Eliminate empty slots</p>
               <p class="partner-feature-item">• Connect with thousands of active players</p>
             </div>
-            <button onclick="window.location.href='#contact'" class="btn-primary shine-btn partner-btn" data-testid="join-partner-btn"
+            <button onclick="openJoinUsPopup()" class="btn-primary shine-btn partner-btn" data-testid="join-partner-btn"
               style="border: 1px solid rgba(255, 255, 255, 0.4);"><span>Join Us</span></button>
           </div>
         </div>
@@ -381,7 +381,7 @@
               <ul class="footer-links">
                 <li><a href="#support" data-testid="footer-help">Help Centre</a></li>
                 <li><a href="#support" data-testid="footer-contact">Contact Us</a></li>
-                <li><a href="#support" data-testid="footer-faqs">FAQs</a></li>
+                <li><a href="javascript:void(0)" onclick="openFaqPopup()" data-testid="footer-faqs">FAQs</a></li>
               </ul>
             </div>
             <div class="footer-column" data-testid="footer-careers">
@@ -414,6 +414,76 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="js/script.js"></script>
 
+  <!-- Join Us Popup -->
+  <div id="joinUsPopup" class="modal-overlay">
+    <div class="modal-card modal-card-light" style="max-width: 500px; padding: 2.5rem 2rem;">
+      <button class="modal-close modal-close-dark" onclick="closeJoinUsPopup()">&times;</button>
+      <h2 class="modal-title-light">List Your Sports Venue</h2>
+      
+      <form class="light-contact-form" onsubmit="submitJoinUsForm(event)">
+        <div class="form-group-light">
+          <input type="text" id="joinName" required placeholder=" ">
+          <label for="joinName">Your Name *</label>
+        </div>
+        <div class="form-group-light">
+          <input type="tel" id="joinNumber" required placeholder=" ">
+          <label for="joinNumber">Contact Number *</label>
+        </div>
+        <div class="form-group-light">
+          <input type="text" id="joinVenueName" required placeholder=" ">
+          <label for="joinVenueName">Venue Name *</label>
+        </div>
+        <div class="form-group-light">
+          <input type="text" id="joinLocation" required placeholder=" ">
+          <label for="joinLocation">Venue City & Location *</label>
+        </div>
+        <div class="form-group-light checkbox-group-light">
+          <label class="checkbox-main-label">Sports Available At Venue *</label>
+          <div class="checkbox-options-light">
+            <label class="custom-checkbox-light"><input type="checkbox" name="joinSports" value="Football"><span>Football</span></label>
+            <label class="custom-checkbox-light"><input type="checkbox" name="joinSports" value="Cricket"><span>Cricket</span></label>
+            <label class="custom-checkbox-light"><input type="checkbox" name="joinSports" value="Badminton"><span>Badminton</span></label>
+            <label class="custom-checkbox-light"><input type="checkbox" name="joinSports" value="Tennis"><span>Tennis</span></label>
+          </div>
+        </div>
+        <div class="form-group-light">
+          <input type="text" id="joinOtherInfo" placeholder=" ">
+          <label for="joinOtherInfo">Any other information you want to share</label>
+        </div>
+        <button type="submit" class="light-submit-btn">SUBMIT</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- FAQ Popup -->
+  <div id="faqPopup" class="modal-overlay">
+    <div class="modal-card" style="max-width: 600px; padding: 2.5rem 2rem;">
+      <button class="modal-close" onclick="closeFaqPopup()">&times;</button>
+      <h2 class="modal-title" style="margin-bottom: 1.5rem; text-align: center;">Frequently Asked Questions</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <h3 class="faq-question">What is GameUp11?</h3>
+          <p class="faq-answer">GameUp11 is an online sports network that connects players with premium local venues. Through our mobile app, you can easily discover and instantly book slots for Box Cricket, Football, Tennis, Pickleball, Badminton, Snooker, and more.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">How do I book a turf or court?</h3>
+          <p class="faq-answer">All venue discoveries, slot selections, and bookings are handled securely through the GameUp11 mobile app. Simply download the app from the Play Store or App Store, select your sport, pick an open time slot at a venue near you, and confirm your booking.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">I own a sports venue. How can I list it on GameUp11?</h3>
+          <p class="faq-answer">Partnering with us helps you digitize your bookings and connect with thousands of active players. Reach out directly via our contact form or call our support team to get your arena listed on our Elite Network.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">How can I reach customer support?</h3>
+          <p class="faq-answer">For booking assistance, partnerships, or general inquiries, you can reach our team at:<br><br>
+          • <strong>Email:</strong> Support@gameup11.com<br>
+          • <strong>Phone:</strong> +91 9156860802<br>
+          • <strong>Phone:</strong> +91 8830219738</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Site Load Popup -->
   <div id="siteLoadPopup" class="modal-overlay">
     <div class="modal-card pixel-form" style="text-align: center; max-width: 400px; padding: 2rem;">
@@ -424,75 +494,7 @@
     </div>
   </div>
 
-  <script>
 
-
-    function closeSiteLoadPopup() {
-      const popup = document.getElementById('siteLoadPopup');
-      popup.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    
-    
-
-    function submitSolidForm(event) {
-      event.preventDefault();
-
-      const venueName = document.getElementById('venueName').value;
-      const contactName = document.getElementById('contactName').value;
-      const contactNumber = document.getElementById('contactNumber').value;
-      const contactEmail = document.getElementById('contactEmail').value;
-      const venueLocation = document.getElementById('venueLocation').value;
-
-      const sportsCheckboxes = document.querySelectorAll('input[name="sports"]:checked');
-      const sports = Array.from(sportsCheckboxes).map(cb => cb.value).join(', ');
-
-      const otherInfo = document.getElementById('otherInfo').value;
-
-      const whatsappMessage = encodeURIComponent(
-        `New Venue Application Details:
-
-` +
-        `Contact Person: ${contactName}
-` +
-        `Contact Number: ${contactNumber}
-` +
-        `Contact Email: ${contactEmail}
-` +
-        `Venue Name: ${venueName}
-` +
-        `Venue Location: ${venueLocation}
-` +
-        `Sports Available: ${sports || 'None selected'}
-
-` +
-        `Additional Information:
-${otherInfo}`
-      );
-
-      window.open(`https://wa.me/919156860802?text=${whatsappMessage}`, '_blank');
-      event.target.reset();
-    }
-
-
-
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        document.body.classList.add('loaded');
-        setTimeout(() => {
-          const preloader = document.getElementById('preloader');
-          if (preloader) preloader.style.display = 'none';
-
-          const popup = document.getElementById('siteLoadPopup');
-          if (popup) {
-            popup.classList.add('active');
-            document.body.style.overflow = 'hidden';
-          }
-        }, 600);
-      }, 4000); // Wait for the full 4s animation cycle
-    });
-  </script>
 </body>
 
 </html>
