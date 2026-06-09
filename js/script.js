@@ -328,13 +328,10 @@ window.addEventListener('load', () => {
       const preloader = document.getElementById('preloader');
       if (preloader) preloader.style.display = 'none';
 
-      if (!sessionStorage.getItem('siteLoadPopupShown')) {
-        const popup = document.getElementById('siteLoadPopup');
-        if (popup) {
-          popup.classList.add('active');
-          document.body.style.overflow = 'hidden';
-          sessionStorage.setItem('siteLoadPopupShown', 'true');
-        }
+      const popup = document.getElementById('siteLoadPopup');
+      if (popup) {
+        popup.classList.add('active');
+        document.body.style.overflow = 'hidden';
       }
     }, 600);
   }, 4000); // Wait for the full 4s animation cycle
