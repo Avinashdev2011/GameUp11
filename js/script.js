@@ -278,6 +278,49 @@ function submitSolidForm(event) {
   event.target.reset();
 }
 
+function openApplyPopup() {
+  const popup = document.getElementById('applyPopup');
+  if (popup) {
+    popup.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeApplyPopup() {
+  const popup = document.getElementById('applyPopup');
+  if (popup) {
+    popup.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+function submitApplyForm(event) {
+  event.preventDefault();
+
+  const name = document.getElementById('applyName').value;
+  const number = document.getElementById('applyNumber').value;
+  const email = document.getElementById('applyEmail').value;
+  const address = document.getElementById('applyAddress').value;
+  const education = document.getElementById('applyEducation').value;
+  const role = document.getElementById('applyRole').value;
+  const message = document.getElementById('applyMessage').value;
+
+  const whatsappMessage = encodeURIComponent(
+    `New Job Application Details:\n\n` +
+    `Name: ${name}\n` +
+    `Contact Number: ${number}\n` +
+    `Email: ${email}\n` +
+    `Address: ${address}\n` +
+    `Education: ${education}\n` +
+    `Applied Role: ${role}\n\n` +
+    `Message:\n${message}`
+  );
+
+  window.open(`https://wa.me/9156860802?text=${whatsappMessage}`, '_blank');
+  event.target.reset();
+  closeApplyPopup();
+}
+
 window.addEventListener('load', () => {
   setTimeout(() => {
     document.body.classList.add('loaded');
@@ -285,10 +328,13 @@ window.addEventListener('load', () => {
       const preloader = document.getElementById('preloader');
       if (preloader) preloader.style.display = 'none';
 
-      const popup = document.getElementById('siteLoadPopup');
-      if (popup) {
-        popup.classList.add('active');
-        document.body.style.overflow = 'hidden';
+      if (!sessionStorage.getItem('siteLoadPopupShown')) {
+        const popup = document.getElementById('siteLoadPopup');
+        if (popup) {
+          popup.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          sessionStorage.setItem('siteLoadPopupShown', 'true');
+        }
       }
     }, 600);
   }, 4000); // Wait for the full 4s animation cycle

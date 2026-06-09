@@ -91,7 +91,7 @@
             <p class="hero-subheading" data-testid="hero-subheading">Connect your facility · Eliminate empty slots ·
               Book, Play, Level Up</p>
             <div class="hero-buttons" data-testid="hero-buttons">
-              <a href="javascript:void(0)" onclick="openJoinUsPopup()" class="btn-primary shine-btn"
+              <a href="javascript:void(0)" onclick="openApplyPopup()" class="btn-primary shine-btn"
                 data-testid="list-turf-btn"><span>Apply Now</span></a>
               <a href="#turfs" class="btn-secondary-hero" data-testid="explore-turfs-btn">Explore Venue →</a>
             </div>
@@ -232,13 +232,9 @@
                     <h3 class="turf-name">SPC Turf</h3>
                     <p class="turf-location">📍 485/3A, Plot NO.19, Kolhapur Rd, opp. Akashwani, behind Volkswagen
                       Showroom, Sangli, Dattanagar, Sangli Miraj Kupwad, Maharashtra 416416</p>
-                    <div class="turf-contact">
-                      <p>Email: spcsangli@gmail.com</p>
-                      <p>Phone: 9767777622 / 8400895008</p>
-                    </div>
-                    <div class="turf-supervisor">
-                      <h4>Supervisor: Atul</h4>
-                      <p>kukrejakrish2005@gmail.com | 7620092286</p>
+                    <p class="turf-games">Games: Multi-Sport Turf</p>
+                    <div class="turf-pricing">
+                      <p>Price: Contact for pricing</p>
                     </div>
                   </div>
                 </div>
@@ -249,6 +245,7 @@
                   <div class="turf-card-content">
                     <h3 class="turf-name">The W turf zone</h3>
                     <p class="turf-location">📍 In front of bharti hospital, sangli Miraj road, Sangli</p>
+                    <p class="turf-games">Games: Multi-Sport Turf</p>
                     <div class="turf-pricing">
                       <p>Day time: ₹800 / Hour</p>
                       <p>Night time: ₹1000 / Hour</p>
@@ -263,9 +260,6 @@
                     <h3 class="turf-name">The Royal Louis Cabana Snooker Club</h3>
                     <p class="turf-location">📍 Spurti Chouk, hasne ashram Road, Hari Om Plaza, Sangli</p>
                     <p class="turf-games">Games: Snooker / Pool</p>
-                    <div class="turf-contact">
-                      <p>Phone: 8080665180 / 8208326443</p>
-                    </div>
                     <div class="turf-pricing">
                       <p>Price: ₹250 / ₹200 per hr</p>
                     </div>
@@ -281,17 +275,20 @@
       </section>
       <section class="stats-section" data-testid="stats-section">
         <div class="section-container">
+          <div class="carousel-header-new">
+            <h2 class="carousel-title" data-testid="stats-title" style="text-align: center; margin-bottom: 2rem; color: #053615;">Our Goal</h2>
+          </div>
           <div class="stats-grid">
             <div class="stat-card" data-testid="stat-turfs">
-              <div class="stat-number" data-target="500" data-suffix="+">0+</div>
+              <div class="stat-number" data-target="25" data-suffix="+">0+</div>
               <div class="stat-label">Partner Turfs</div>
             </div>
             <div class="stat-card" data-testid="stat-players">
-              <div class="stat-number" data-target="50" data-suffix="k+">0k+</div>
+              <div class="stat-number" data-target="2500" data-suffix="+">0+</div>
               <div class="stat-label">Active Players</div>
             </div>
             <div class="stat-card" data-testid="stat-bookings">
-              <div class="stat-number" data-target="1.0" data-suffix="M+">0M+</div>
+              <div class="stat-number" data-target="50" data-suffix="+">0+</div>
               <div class="stat-label">Total Bookings</div>
             </div>
           </div>
@@ -387,7 +384,7 @@
             <div class="footer-column" data-testid="footer-careers">
               <h4 class="footer-heading">Careers</h4>
               <ul class="footer-links">
-                <li><a href="javascript:void(0)" onclick="openJoinUsPopup()" data-testid="footer-apply">Apply Now</a></li>
+                <li><a href="javascript:void(0)" onclick="openApplyPopup()" data-testid="footer-apply">Apply Now</a></li>
               </ul>
             </div>
             <div class="footer-column" data-testid="footer-social">
@@ -451,6 +448,51 @@
           <label for="joinOtherInfo">Any other information you want to share</label>
         </div>
         <button type="submit" class="light-submit-btn">SUBMIT</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Apply Now Popup -->
+  <div id="applyPopup" class="modal-overlay">
+    <div class="modal-card modal-card-light" style="max-width: 500px; padding: 2.5rem 2rem;">
+      <button class="modal-close modal-close-dark" onclick="closeApplyPopup()">&times;</button>
+      <h2 class="modal-title-light">Apply Now</h2>
+      
+      <form class="light-contact-form" onsubmit="submitApplyForm(event)">
+        <div class="form-group-light">
+          <input type="text" id="applyName" required placeholder=" ">
+          <label for="applyName">Your Name *</label>
+        </div>
+        <div class="form-group-light">
+          <input type="tel" id="applyNumber" required placeholder=" ">
+          <label for="applyNumber">Contact Number *</label>
+        </div>
+        <div class="form-group-light">
+          <input type="email" id="applyEmail" required placeholder=" ">
+          <label for="applyEmail">Email *</label>
+        </div>
+        <div class="form-group-light">
+          <input type="text" id="applyAddress" required placeholder=" ">
+          <label for="applyAddress">Address *</label>
+        </div>
+        <div class="form-group-light">
+          <input type="text" id="applyEducation" required placeholder=" ">
+          <label for="applyEducation">Education *</label>
+        </div>
+        <div class="form-group-light">
+          <select id="applyRole" required>
+            <option value="" disabled selected>Select a Role *</option>
+            <option value="App Developer">App Developer</option>
+            <option value="On field Support">On field Support</option>
+            <option value="Marketing">Marketing</option>
+          </select>
+          <label for="applyRole" style="display:none;">Role</label>
+        </div>
+        <div class="form-group-light">
+          <textarea id="applyMessage" rows="3" required placeholder=" "></textarea>
+          <label for="applyMessage">Message Us *</label>
+        </div>
+        <button type="submit" class="light-submit-btn" style="margin-top: 1.5rem;">SUBMIT APPLICATION</button>
       </form>
     </div>
   </div>
